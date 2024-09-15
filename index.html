@@ -114,6 +114,23 @@ ul li:hover {
     background-color: #ccc;
 }
 
+@media (max-width: 480px) {
+        h1 {
+            font-size: 28px; /* Even smaller for very small screens */
+        }
+
+        h1::before {
+            content: none;
+        }
+
+        input, button {
+            font-size: 16px;
+        }
+
+        ul li {
+            width: 90%; /* Full width for the list items */
+        }
+    }
   </style>
 </head>
 <body>
