@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Testing Simulator</title>
+  <style>
+    body {
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    margin: 0;
+    padding: 20px; /* Add some padding to the body */
+    background-color: #00ffd5;
+}
+
+.container {
+    text-align: center;
+    width: 80%; /* Adjust width to be responsive */
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto; /* Center the container */
+}
+
+input {
+    width: 90%; /* Full width of the container */
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 10px auto; /* Centers button */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #00b3ff;
+    border-radius: 5px;
+}
+
+h1 {
+    font-size: 45px; /* Font size for the heading */
+    position: relative; /* Allows positioning of the pseudo-element */
+    display: inline-block; /* Makes the element fit the content size */
+    z-index: 1; /* Ensure text appears above the circle */
+    color: #000000; /* Change text color to white for contrast */
+}
+
+h1::before {
+    content: ""; /* Required for pseudo-element */
+    position: absolute; /* Position relative to h1 */
+    top: 60%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    width: 600px; /* Diameter of the circle */
+    height: 130px; /* Diameter of the circle */
+    background-color: yellow; /* Inside color */
+    border-radius: 50%; /* Makes it a circle */
+    border: 5px solid black; /* Add a black border */
+    transform: translate(-50%, -50%); /* Center the circle */
+    z-index: -1; /* Places the circle behind the text */
+}
+
+h2 {
+    margin-top: 20px; /* Space above the heading */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto; /* Centers the list within the container */
+    text-align: center; /* Aligns API list to center */
+}
+
+ul li {
+    cursor: pointer;
+    margin: 5px 0;
+    padding: 10px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+    width: 80%; /* Consistent width */
+    margin-left: auto; /* Centers the list items */
+    margin-right: auto; /* Centers the list items */
+}
+
+ul li:nth-child(odd) {
+    background-color: #eeff00; /* Yellow for odd items */
+}
+
+ul li:nth-child(even) {
+    background-color: #00ff08; /* Green for even items */
+}
+
+
+ul li:hover {
+    background-color: #ccc;
+}
+
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1><b>API <br> Testing Simulator</b></h1>
+
+        <!-- Input Bar for URL -->
+        <input type="text" id="urlInput" placeholder="Enter API URL or click below" />
+
+        <!-- Check API Button -->
+        <button id="checkBtn">Check API Status</button>
+
+        <!-- Display Result -->
+        <div id="result"></div>
+
+        <h2>Public APIs</h2>
+        <!-- List of Public APIs -->
+        <ul id="apiList">
+            <!-- API list items will be inserted here -->
+        </ul>
+        
+    </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
